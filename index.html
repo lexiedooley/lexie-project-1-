@@ -1,74 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Card Matching Game </title>
-</head>
-
-
 <body>
-<link rel="stylesheet" href="style.css">
-  <script defer src="main.js"></script>
-  <h1>Match the Cards! </h1>
-  <h2> Time Left: </h2>
-
-  <div class="shell">
-    <div class="card-container" data-runes="domination">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="domination">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="precision">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="precision">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="sorcery">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="sorcery">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="inspriration">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="inspriration">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="resolve">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="resolve">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
+    <link rel="stylesheet" href="style.css">
+      <script defer src="main.js"></script>
+      <h1>Match the Cards! </h1>
+      <h2 id= 'timer'>Time left: </h2>
+    
+      <div class="shell">
+        <div class="card" data-runes="domination">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
+            <img class="back" src="">
         </div>
-    <div class="card-container" data-runes="runes">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-    <div class="card-container" data-runes="runes">
-        <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
-        <img class="back" src="https://p7.hiclipart.com/preview/1016/1000/897/league-of-legends-computer-icons-ongamenet-starleague-video-game-electronic-sports-voice-actor.jpg">
-    </div>
-  </div>
-
-    <div id="outcome"></div>
-    <div id="countdown"></div>
-  
-  <button id="restart"> PLAY AGAIN? </button>
-</body>
-
-</html>
+        <div class="card" data-runes="domination">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="precision">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="precision">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="sorcery">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="sorcery">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="inspriration">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="inspriration">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="resolve">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="resolve">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
+            <img class="back" src="">
+            </div>
+        <div class="card" data-runes="runes">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
+            <img class="back" src="">
+        </div>
+        <div class="card" data-runes="runes">
+            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
+            <img class="back" src="">
+        </div>
+      </div>
+    
+        <div id="outcome"></div>
+        <div id="countdown"></div>
+      
+      <button id="restart"> PLAY AGAIN? </button>
+    </body>

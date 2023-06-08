@@ -1,43 +1,46 @@
 html {
-    height: 100vh;
-    width: 100vw;
-  }
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
   
-  header {
-    
-  }
+}
+
+body {
+  /* height: 40vh; */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #041832;
+}
+
+h1 {
+  color: #BF8422;
+}
+h2 {
+  color: white;
+}
+.shell {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(4, 150px);
+  background-color: #041832;
+  gap: 4px;
   
-  body {
-    /* height: 40vh; */
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #041832;
-  }
-  
-  h1 {
-    
-  }
-  
-  .shell {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(4, 150px);
-    background-color: #041832;
-    gap: 4px;
-    
-  }
-  
-  .card-container {
-    background-color: #000000;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    border: 1px solid rgb(90, 15, 15);p
-    border-radius: 2px;
-  }
-  .front, .back {
-    
-  }
+}
+
+.card {
+  background-color: #000000;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border: 1px solid #BF8422;p
+  border-radius: 2px;
+}
+
+.selected {
+border-color: red;
+}
