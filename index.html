@@ -2,8 +2,11 @@
     <link rel="stylesheet" href="style.css">
       <script defer src="main.js"></script>
       <h1>Match the Cards! </h1>
-      <h2 id= 'timer'>Time left: </h2>
+      <div id="countdown">You have <span id="time">02:00</span> to finish</div>
     
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+
       <div class="shell">
         <div class="card" data-runes="domination">
             <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
@@ -56,7 +59,6 @@
       </div>
     
         <div id="outcome"></div>
-        <div id="countdown"></div>
       
       <button id="restart"> PLAY AGAIN? </button>
     </body>

@@ -44,3 +44,7 @@ h2 {
 .selected {
 border-color: red;
 }
+
+.countdown {
+  font-color: white; 
+}

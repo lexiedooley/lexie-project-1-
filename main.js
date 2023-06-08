@@ -3,6 +3,7 @@ const cards = document.querySelectorAll('div.card');
 
 let firstCard;
 let secondCard;
+let timeCountdown
 
 // function to select card
 const selectCard = (card) => {
@@ -58,3 +59,39 @@ for (let i = 0; i < cards.length; i++) {
 }
 //shuffle the cards
 //reset game
+
+// countdown
+
+// declare function and show duration/display
+function startTimer(duration, display) {
+// the timer duration should be in minutes/seconds
+  let timer = duration, minutes, seconds;
+  let intervalId = setInterval(function () {
+      minutes = parseInt(timer / 60, 10)
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+// display as 00:00
+      display.textContent = minutes + ":" + seconds;
+
+      if (--timer < 0) {
+          timer = duration;
+      }
+  }, 1000);
+  
+    document.getElementById('stop').addEventListener('click', function () {
+        clearInterval(intervalId);
+    });
+}
+
+window.onload = function () {
+  let count = 60 * .5,
+      display = document.querySelector('#time');
+// when start button clicked, rerun start timer function
+    document.getElementById('start').addEventListener('click', function () { 
+      startTimer(count, display);
+    });       
+
+      
+};
