@@ -210,11 +210,6 @@ window.onload = function () {
         gameRunning = true;
         startTimer(count, display);
       }
-
     });    
-
 };
 
-// if all cards are matched, do this
-
-//if timer runs out, and all cards aren't matched, do this
