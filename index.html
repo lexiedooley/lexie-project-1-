@@ -1,63 +1,64 @@
 <body>
     <link rel="stylesheet" href="style.css">
-      <script defer src="main.js"></script>
-      <h1>Match the Cards! </h1>
-      <div id="countdown">You have <span id="time">01:00</span> to finish</div>
+        <script defer src="main.js"></script>
+        <h1>Match the Cards! </h1>
+        <div id="countdown">You have <span id="time">01:00</span> to finish</div>
     
-      <button id="start">Start</button>
-      <button id="restart">Restart</button>ß
-
-      <div class="shell">
-        <div class="card" data-runes="domination">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="domination">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="precision">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="precision">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="sorcery">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="sorcery">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="inspriration">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="inspriration">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="resolve">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
-            <img class="back" src="">
-        </div>
-        <div class="card" data-runes="resolve">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
-            <img class="back" src="">
+        <button id="start">Start</button>
+        <button id="restart">Restart</button>
+        
+        <div class="bigBox">
+            <div id="outcome"><span id="outcomeSpanTag"></span></div>
+    
+            <div class="shell">
+            <!-- <div class="card" data-runes="domination">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
+                <img class="back" src="">
             </div>
-        <div class="card" data-runes="runes">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
-            <img class="back" src="">
+            <div class="card" data-runes="domination">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png"/>
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="precision">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="precision">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="sorcery">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="sorcery">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="inspriration">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="inspriration">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="resolve">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="resolve">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png">
+                <img class="back" src="">
+                </div>
+            <div class="card" data-runes="runes">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
+                <img class="back" src="">
+            </div>
+            <div class="card" data-runes="runes">
+                <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
+                <img class="back" src="">
+            </div> -->
+            </div>
         </div>
-        <div class="card" data-runes="runes">
-            <img class="front" src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png">
-            <img class="back" src="">
-        </div>
-      </div>
-    
-        <div id="outcome"></div>
-    
     </body>

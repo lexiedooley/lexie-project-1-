@@ -15,6 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #041832;
+  gap: 10px;
 }
 
 h1 {
@@ -28,8 +29,10 @@ h2 {
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(4, 150px);
   background-color: #041832;
+  justify-content: center;
   gap: 4px;
-  
+  margin-right: 48%;
+  margin-bottom: 5%;
 }
 
 .card {
@@ -37,7 +40,7 @@ h2 {
   justify-content: center;
   display: flex;
   align-items: center;
-  border: 1px solid #BF8422;p
+  border: 1px solid #BF8422;
   border-radius: 2px;
 }
 
@@ -47,4 +50,27 @@ border-color: red;
 
 #countdown {
   color: white; 
+}
+
+.bigBox {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  justify-content: left;
+  gap: 25px;
+}
+
+#outcome {
+  font-size: 2rem;
+  text-align: right;
+  color: white;
+}
+
+.win {
+  color: red;
+}
+
+.lose {
+  color: blue;
 }

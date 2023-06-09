@@ -1,3 +1,49 @@
+const unshuffledCards = ['d', 'd', 's', 's', 'p', 'p', 'i', 'i', 'r', 'r', 'o', 'o'];
+const cardsObj = {
+  'd': "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7200_domination.png",
+  's': "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7202_sorcery.png",
+  'p': "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7201_precision.png",
+  'i': "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png",
+  'r': "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7204_resolve.png",
+  'o': "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/runesicon.png"
+};
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+const shuffledCards = shuffle(unshuffledCards);
+const shell = document.querySelector('.shell');
+for (let i = 0; i < shuffledCards.length; i++) {
+
+  const div = document.createElement('div');
+  div.classList.add('card');
+
+  const backImg = document.createElement('img');  
+  backImg.classList.add('back');
+  backImg.width = 64;
+  backImg.height = 64;
+  backImg.src=('https://upload.wikimedia.org/wikipedia/commons/2/2a/LoL_icon.svg');
+
+
+  div.appendChild(backImg);
+  div.setAttribute('data-runes', shuffledCards[i]);
+
+  shell.appendChild(div);
+}
+
 const cards = document.querySelectorAll('div.card');
 
 
@@ -15,6 +61,11 @@ const selectCard = (card) => {
   }
   else {
  // if the card isn't selected, add the new class
+    const img = card.childNodes[0];
+    card.removeChild(img);
+    const frontImg = document.createElement('img');
+    frontImg.src = cardsObj[card.dataset.runes];
+    card.appendChild(frontImg); 
     card.classList.add('selected');
   }
 }
@@ -22,6 +73,7 @@ const selectCard = (card) => {
 const checkMatch = () => {
 // check to see if the data in runes matches
   if (firstCard.dataset.runes === secondCard.dataset.runes) {
+    console.log('equal');
     firstCard.classList.add('test');
     secondCard.classList.add('test');
     firstCard = undefined;
@@ -29,16 +81,46 @@ const checkMatch = () => {
   }
 //if not remove selected tag and move to undefined
   else {
+    const firstCardImg = firstCard.childNodes[0];
+    firstCard.removeChild(firstCardImg);
+
+    const secondCardImg = secondCard.childNodes[0];
+    secondCard.removeChild(secondCardImg);
+
+    const backImg = document.createElement('img');
+    backImg.width = 64;
+    backImg.height = 64;
+    backImg.src=('https://upload.wikimedia.org/wikipedia/commons/2/2a/LoL_icon.svg');
+    
+    const backImgTwo = document.createElement('img');
+    backImgTwo.width = 64;
+    backImgTwo.height = 64;
+    backImgTwo.src=('https://upload.wikimedia.org/wikipedia/commons/2/2a/LoL_icon.svg');
+
+    firstCard.appendChild(backImg);
+    secondCard.appendChild(backImgTwo);
+
     firstCard.classList.remove('selected');
     secondCard.classList.remove('selected');
     firstCard = undefined;
     secondCard = undefined;
   }
+  
+  const selectedCards = document.querySelectorAll('div.selected');
+  if (selectedCards.length === 12) {
+    const win = document.querySelector('#outcomeSpanTag');
+    win.textContent = 'You win!';
+    gameRunning = false;
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.remove('selected');
+    }
+  }
+
 }
 
 for (let i = 0; i < cards.length; i++) {
   cards[i].id = `card-${i}`;
-  cards[i].addEventListener("click", () => {
+  cards[i].addEventListener("click", async () => {
     const card = document.getElementById(`card-${i}`);
 //check to see if game is running
     if (!gameRunning)
@@ -53,15 +135,25 @@ for (let i = 0; i < cards.length; i++) {
     else if (firstCard !== undefined && secondCard === undefined && firstCard !== card) {
 // invoke the function select card passing in the SECOND card value
       selectCard(card);
+      console.log(card, 'card');
 // assign the value of secondCard to be the third div
       secondCard = card;
+
+      function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+      }
+      async function test () {
+        console.log('start timer');
+        await delay(1000);
+        console.log('after 1 second');
+      }
+      await test();
 // invoke checkMatch
       checkMatch();
+
     }
   });
 }
-
-// countdown
 
 // declare function and show duration/display
 function startTimer(duration, display) {
@@ -78,17 +170,27 @@ function startTimer(duration, display) {
 
       if (--timer < 0) {
         clearInterval(intervalId);
+        const loss = document.querySelector('#outcomeSpanTag');
+        loss.textContent = 'You lose!';
+        gameRunning = false;
       }
 
   //restart
   document.getElementById('restart').addEventListener('click', function () {
         clearInterval(intervalId);
+        const win = document.querySelector('#outcomeSpanTag');
+        win.textContent = '';
         startTimer(duration, display);
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList.remove('selected');
+    }
+
   })
   }, 1000);
 }
 
 window.onload = function () {
+//how long we want the counter to be
   let count = 60; 
 // pull start button and what's inside the div
       display = document.querySelector('#time');
@@ -101,5 +203,8 @@ window.onload = function () {
 
     });    
 
-
 };
+
+// if all cards are matched, do this
+
+//if timer runs out, and all cards aren't matched, do this
