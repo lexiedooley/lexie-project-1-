@@ -45,6 +45,7 @@ for (let i = 0; i < shuffledCards.length; i++) {
 }
 
 const cards = document.querySelectorAll('div.card');
+console.log(cards, 'cards')
 
 
 let firstCard;
@@ -73,7 +74,7 @@ const selectCard = (card) => {
 const checkMatch = () => {
 // check to see if the data in runes matches
   if (firstCard.dataset.runes === secondCard.dataset.runes) {
-    console.log('equal');
+
     firstCard.classList.add('test');
     secondCard.classList.add('test');
     firstCard = undefined;
@@ -182,6 +183,16 @@ function startTimer(duration, display) {
         win.textContent = '';
         startTimer(duration, display);
     for (let i = 0; i < cards.length; i++) {
+      const img = cards[i].childNodes[0];
+      cards[i].removeChild(img);
+
+      const backImg = document.createElement('img');  
+      backImg.classList.add('back');
+      backImg.width = 64;
+      backImg.height = 64;
+      backImg.src=('https://upload.wikimedia.org/wikipedia/commons/2/2a/LoL_icon.svg');
+      
+      cards[i].appendChild(backImg);
       cards[i].classList.remove('selected');
     }
 
